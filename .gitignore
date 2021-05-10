@@ -1,0 +1,16 @@
+# Python
+*.pyc
+*~
+__pycache__
+
+# Env
+myenv/
+venv/
+
+# Database
+db.sqlite3
+
+# VSCode
+.history/
+*.code-workspace
+

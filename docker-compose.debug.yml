@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  py:
+    image: py-dev
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
+      - 5678:5678
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 manage.py runserver 0.0.0.0:8000 --nothreading --noreload"]
+    #command: tail -f /dev/null  #npm run dev
