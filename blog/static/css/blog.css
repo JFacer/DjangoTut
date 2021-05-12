@@ -35,6 +35,15 @@ a {
   padding-bottom: 5px;
 }
 
+.top-menu,
+.top-menu:hover,
+.top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 10pt;
+    margin-right: 20px;
+}
+
 .btn-default,
 .btn-default:visited {
   color: #00b7ff;

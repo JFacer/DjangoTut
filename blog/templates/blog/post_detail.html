@@ -1,10 +1,22 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
     <article class="post">
-        <time class="date">published: {{ post.published_date }}</time>
+        <time class="date">
+            created: {{ post.created_date }} - 
+            edited: {{ post.published_date }}
+        </time>
         <h4>{{ post.title }}</h4>
+
+        <aside class="actions">
+            <a href="{% url 'post_edit' pk=post.pk %}" >
+                <img src="{% static 'images/Comment-edit-icon-32.png' %}" width="32px" heigh="32px">
+            </a>
+        </aside>
+
         <p>{{ post.text|linebreaksbr }}</p>
+
     </article>
     <hr>
 {% endblock %}
